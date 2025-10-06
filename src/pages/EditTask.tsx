@@ -47,9 +47,9 @@ export const EditTask: React.FC<Props> = ({ tasks, createTask, updateTask }) => 
   return (
     <>
       <Header title={isNew ? "New Task" : "Edit Task"} back />
-      <div className="container">
+      <div className="container main-content">
         <form className="form card" onSubmit={submit}>
-          <div style={{ marginBottom: 12 }}>
+          <div className="section-element">
             <div className="label">Title</div>
             <input
               className="field"
@@ -59,7 +59,7 @@ export const EditTask: React.FC<Props> = ({ tasks, createTask, updateTask }) => 
             />
           </div>
 
-          <div style={{ marginBottom: 12 }}>
+          <div className="section-element">
             <div className="label">Description</div>
             <textarea
               className="field textarea"
@@ -69,7 +69,7 @@ export const EditTask: React.FC<Props> = ({ tasks, createTask, updateTask }) => 
             />
           </div>
 
-          <div style={{ marginBottom: 12 }}>
+          <div className="section-element">
             <div className="label">{label[status]}</div>
             <div className="status-row">
               {(["pending", "in_progress", "completed"] as TaskStatus[]).map((s) => (

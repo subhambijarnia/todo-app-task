@@ -9,7 +9,7 @@ import { v4 as uuid } from "uuid";
 const STORAGE_KEY = "todo.tasks.key";
 
 const App: React.FC = () => {
-  // Load from localStorage before render
+  
   const [tasks, setTasks] = useState<Task[]>(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -24,7 +24,6 @@ const App: React.FC = () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
 
-  // --- CRUD functions ---
   const createTask = (input: NewTaskInput): string => {
     const id = uuid();
     const newTask: Task = {

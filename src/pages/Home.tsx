@@ -30,7 +30,7 @@ export const Home: React.FC<Props> = ({ tasks, deleteTask }) => {
   return (
     <>
       <Header title="TODO APP" />
-      <div className="container">
+      <div className="container main-content">
         <SearchInput value={query} onChange={setQuery} />
 
         <Section title="In Progress" count={inProgress.length} defaultOpen>
